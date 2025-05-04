@@ -344,8 +344,8 @@ input[type="file"] {
 .main-btn {
   background: #4a6cf7; /* New solid color */
   color: white;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -411,13 +411,13 @@ input[type="file"] {
 }
 
 .modal-content {
-  background: white;
+/*  background: white;*/
   margin: 2% auto;
-  padding: 15px;
+/*  padding: 15px;*/
   width: auto;
-  max-width: 90%;
+/*  max-width: 90%;*/
   height: auto;
-  max-height: 90%;
+/*  max-height: 90%;*/
   border-radius: 10px;
   position: relative;
 }
