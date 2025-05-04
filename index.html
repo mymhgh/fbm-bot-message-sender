@@ -104,6 +104,37 @@ Button 3 - https://link3.com">Join Group - https://t.me/FbmMarket</textarea>
     <p id="alertMessage"></p>
 </div>
 
+
+
+<!-- Note Pade -->
+  <!-- Main Note Button (Left Bottom) -->
+  <div class="note-container">
+    <button id="mainNoteBtn" class="main-btn">
+      <i class="fas fa-chart-bar" id="btnIcon"></i>
+    </button>
+    <!-- Sub Buttons (Hidden Initially) -->
+    <div id="subButtons" class="sub-btns">
+      <button class="sub-btn" data-embed-src="sub-note/payment-note.html">
+        <i class="fas fa-coins"></i> Token Note
+      </button>
+      <button class="sub-btn" data-embed-src="sub-note/payment-note.html">
+        <i class="fas fa-credit-card"></i> Payment Note
+      </button>
+      <button class="sub-btn" data-embed-src="sub-note/file-report.html">
+        <i class="fas fa-chart-bar"></i> Report Note
+      </button>
+    </div>
+  </div>
+
+  <!-- Embedded Page Modal -->
+  <div id="embedModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <iframe id="embeddedFrame" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+
+    
     <script src="script.js"></script>
 </body>
 </html>
