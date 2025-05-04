@@ -430,7 +430,7 @@ iframe {
   border-radius: 5px;
 }
 
-.close-btn {
+.p-close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -439,7 +439,7 @@ iframe {
   color: #888;
 }
 
-.close-btn:hover {
+.p-close-btn:hover {
   color: #333;
 }
 
