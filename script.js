@@ -208,3 +208,49 @@ closePopup.addEventListener("click", () => {
 
     // Generate a random OTP when the page loads
     generateRandomOTP();
+
+
+
+
+
+
+// Note Pade 
+// DOM Elements
+const mainNoteBtn = document.getElementById("mainNoteBtn");
+const btnIcon = document.getElementById("btnIcon");
+const noteContainer = document.querySelector(".note-container");
+const subButtons = document.getElementById("subButtons");
+const embedModal = document.getElementById("embedModal");
+const closeModal = document.getElementById("closeModal");
+const embeddedFrame = document.getElementById("embeddedFrame");
+const subBtns = document.querySelectorAll(".sub-btn");
+
+// 1. Toggle Main Button (Icon Change) + Sub Buttons
+mainNoteBtn.addEventListener("click", function() {
+  noteContainer.classList.toggle("active");
+  btnIcon.classList.toggle("fa-notes");
+  btnIcon.classList.toggle("fa-times");
+});
+
+// 2. Open Modal with Embedded Page
+subBtns.forEach(btn => {
+  btn.addEventListener("click", function() {
+    const embedSrc = this.getAttribute("data-embed-src");
+    embeddedFrame.src = embedSrc;
+    embedModal.style.display = "block";
+  });
+});
+
+// 3. Close Modal
+closeModal.addEventListener("click", function() {
+  embedModal.style.display = "none";
+  embeddedFrame.src = "";
+});
+
+// 4. Close Modal if Clicked Outside
+window.addEventListener("click", function(event) {
+  if (event.target === embedModal) {
+    embedModal.style.display = "none";
+    embeddedFrame.src = "";
+  }
+});
