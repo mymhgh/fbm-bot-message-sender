@@ -226,7 +226,7 @@ const embeddedFrame = document.getElementById("embeddedFrame");
 const subBtns = document.querySelectorAll(".sub-btn");
 
 // 1. Toggle Main Button (Icon Change) + Sub Buttons
-mainNoteBtn.addEventListener("click", function() {
+mainNoteBtn.addEventListener("click", function () {
   noteContainer.classList.toggle("active");
   btnIcon.classList.toggle("fa-notes");
   btnIcon.classList.toggle("fa-times");
@@ -234,7 +234,7 @@ mainNoteBtn.addEventListener("click", function() {
 
 // 2. Open Modal with Embedded Page
 subBtns.forEach(btn => {
-  btn.addEventListener("click", function() {
+  btn.addEventListener("click", function () {
     const embedSrc = this.getAttribute("data-embed-src");
     embeddedFrame.src = embedSrc;
     embedModal.style.display = "block";
@@ -242,15 +242,26 @@ subBtns.forEach(btn => {
 });
 
 // 3. Close Modal
-closeModal.addEventListener("click", function() {
+closeModal.addEventListener("click", function () {
   embedModal.style.display = "none";
   embeddedFrame.src = "";
 });
 
 // 4. Close Modal if Clicked Outside
-window.addEventListener("click", function(event) {
+window.addEventListener("click", function (event) {
   if (event.target === embedModal) {
     embedModal.style.display = "none";
     embeddedFrame.src = "";
+  }
+});
+
+// 5. Close noteContainer if clicked outside when it's active
+window.addEventListener("click", function (event) {
+  const isClickInside = mainNoteBtn.contains(event.target) || noteContainer.contains(event.target);
+
+  if (!isClickInside && noteContainer.classList.contains("active")) {
+    noteContainer.classList.remove("active");
+    btnIcon.classList.add("fa-notes");
+    btnIcon.classList.remove("fa-times");
   }
 });
